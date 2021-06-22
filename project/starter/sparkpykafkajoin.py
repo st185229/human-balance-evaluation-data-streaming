@@ -61,7 +61,9 @@ kafkaRedisDF = spark \
     .option("subscribe", "redis-server") \
     .option("startingOffsets", "earliest") \
     .load()
-# TO-DO: cast the value column in the streaming dataframe as a STRING 
+# TO-DO: cast the value column in the streaming dataframe as a STRING
+
+kafkaRedisDF = kafkaRedisDF.selectExpr("cast(value as string) value")
 
 # TO-DO:; parse the single column "value" with a json object in it, like this:
 # +------------+
