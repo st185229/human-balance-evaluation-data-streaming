@@ -1,3 +1,4 @@
 .idea
 venv
 /project/starter/.venv/
+/spark/jars/
